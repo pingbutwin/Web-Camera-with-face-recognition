@@ -1,0 +1,4 @@
+Developed a high-performance asynchronous system for remote video stream processing using FastAPI and YOLOv8. I engineered a custom WebSocket protocol to handle bi-directional data exchange, enabling a local Python client to stream MJPEG frames to a cloud-based inference server. The project features a multi-threaded architecture where the server performs real-time object detection and tracking, while a StreamingResponse interface provides a low-latency live view for end-users. To ensure production-ready accessibility, I implemented secure tunneling via ngrok and integrated Hugging Face Hub for automated model versioning and deployment.
+
+Tools: Python, FastAPI, YOLOv8/11, WebSockets, OpenCV, ngrok, Hugging Face.
+To start the app firstly you have to start the server, then start the client, using the link given in the server's output and open '/' endpoint in your browser to see the results
