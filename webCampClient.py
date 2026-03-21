@@ -33,9 +33,13 @@ async def stream_camera():
     except Exception as e:
         print(f'{log_label} ERROR (while connecting): {e}')
     finally:
-        cap.release()
+        if cap.isOpened():
+            cap.release()
+        print(f'{log_label} Releasing all resources')
 
 if __name__ == '__main__':
-    asyncio.run(stream_camera())
-
+    try:
+        asyncio.run(stream_camera())
+    except KeyboardInterrupt:
+        print(f'{log_label} Shutting down the client')
 
